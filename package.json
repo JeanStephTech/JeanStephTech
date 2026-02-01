@@ -15,6 +15,7 @@
     "scrollreveal": "latest",
      "firebase": "latest",
     "react-icons": "latest",
+    "lucide-react": "latest",
     "date-fns": "latest"
   },
   "devDependencies": {
