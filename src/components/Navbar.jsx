@@ -32,16 +32,16 @@ export default function Navbar() {
         {/* Logo & Nom */}
         <Link to="/" className="flex items-center gap-3">
           <img
-            src="https://files.catbox.moe/73laum.png"
+            src="https://files.catbox.moe/z76f8f.png"
             alt="JEAN - STEPH TECH"
             onError={(e) => (e.target.style.display = "none")}
             className="w-10 h-10 rounded-full object-cover"
           />
           <div>
             <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100">
-              JEAN - STE
+              JEAN - STEPH TECH
             </h1>
-            <p className="text-xs text-slate-500 dark:text-slate-400">PH TECH</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">DIGITAL SOLUTIONS</p>
           </div>
         </Link>
 
