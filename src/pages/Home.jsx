@@ -8,7 +8,7 @@ import Skills from "../components/Skills";
 
 export default function Home() {
   const author = {
-    name: "JEAN - STÉPHANE DEV",
+    name: "JEAN - STEPHANE DEV",
     email: "support@lordobitotech.xyz",
     phone: "+2250712668494",
   };
