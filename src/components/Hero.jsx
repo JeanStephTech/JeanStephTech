@@ -63,7 +63,7 @@ export default function Hero() {
           <div className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center transition-all duration-500 hover:scale-105">
             {!imgError ? (
               <img
-                src="/logo.png" // Place JEAN STEPH TECH logo here
+                src="https://files.catbox.moe/z76f8f.png" // Place JEAN STEPH TECH logo here
                 className="w-full h-full object-contain p-6"
                 onError={() => setImgError(true)}
                 alt="JEAN STEPH TECH"
