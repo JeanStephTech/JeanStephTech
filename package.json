@@ -1,27 +1,28 @@
 {
-  "name": "JEAN - STEPH TECH",
-  "version": "2.0.1",
+  "name": "jean-steph-tech",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --port $PORT --host"
+    "preview": "vite preview --port $PORT --host",
+    "start": "vite"
   },
   "dependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-router-dom": "6.14.1",
-    "@vitejs/plugin-react": "latest",
-    "scrollreveal": "latest",
-     "firebase": "latest",
-    "react-icons": "latest",
-    "lucide-react": "latest",
-    "date-fns": "latest"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1",
+    "scrollreveal": "^4.0.9",
+    "firebase": "^10.0.0",
+    "react-icons": "^4.10.0",
+    "lucide-react": "^0.263.1",
+    "date-fns": "^2.30.0"
   },
   "devDependencies": {
-    "vite": "5.1.0",
-    "tailwindcss": "3.4.7",
-    "postcss": "8.4.24",
-    "autoprefixer": "10.4.14"
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.1.0",
+    "tailwindcss": "^3.4.7",
+    "postcss": "^8.4.24",
+    "autoprefixer": "^10.4.14"
   }
 }
