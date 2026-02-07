@@ -16,28 +16,28 @@ export default function Parcours() {
   const parcours = [
     {
       year: "2024",
-      title: "The adventure begins",
-      desc: "I started my journey as a self-taught developer. Passionate about technology and bots, I explored HTML, CSS and JavaScript through small personal projects.",
+      title: "The foundation of JEAN STEPH TECH",
+      desc: "The journey began with the vision of building a modern digital company. We explored web technologies, automation tools, and communication platforms to lay the foundations of what would become JEAN STEPH TECH.",
     },
     {
       year: "2024",
-      title: "First WhatsApp bot",
-      desc: "Creating my first WhatsApp bot. This step allowed me to understand automation, session management, and real-time communication with users.",
+      title: "First automation & WhatsApp bots",
+      desc: "We developed our first intelligent bots, allowing businesses to automate their customer communication, manage sessions, and interact with users in real time through WhatsApp.",
     },
     {
       year: "2025",
-      title: "Launch of my first websites",
-      desc: "Development of 3 websites, including educational platforms and portfolios. I applied my frontend knowledge to create modern, responsive, and accessible interfaces.",
+      title: "Launch of professional websites",
+      desc: "We built and launched multiple professional websites, including educational platforms and company portfolios. These projects demonstrated our expertise in responsive, modern, and user-focused web development.",
     },
     {
       year: "2025",
-      title: "JEAN - STEPH TECH",
-      desc: "JEAN - STEPH TECH Foundation, my flagship project. Here, I combined my web development and bot skills to create professional solutions and advanced automation tools.",
+      title: "Official launch of JEAN STEPH TECH",
+      desc: "JEAN STEPH TECH was officially launched as a digital solutions company, offering advanced web development, automation systems, and custom bot solutions for businesses.",
     },
     {
       year: "2026",
-      title: "Current projects and future vision",
-      desc: "Ongoing development of innovative bots and websites, including the company website and other ambitious projects. Objective: to create solutions that automate tasks, improve the user experience and bring value to my clients.",
+      title: "Growth, innovation and future vision",
+      desc: "We are continuously developing new technologies, including smarter bots and scalable platforms. Our mission is to help businesses save time, increase efficiency, and grow through powerful digital automation.",
     },
   ];
 
@@ -50,7 +50,10 @@ export default function Parcours() {
 
         <div className="space-y-12">
           {parcours.map((step, i) => (
-            <div key={i} className="flex flex-col md:flex-row items-start gap-6 reveal">
+            <div
+              key={i}
+              className="flex flex-col md:flex-row items-start gap-6 reveal"
+            >
               <div className="flex-shrink-0 w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-lg md:text-xl">
                 {step.year}
               </div>
@@ -68,4 +71,4 @@ export default function Parcours() {
       </div>
     </section>
   );
-}
+              }
