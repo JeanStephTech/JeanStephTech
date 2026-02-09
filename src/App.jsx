@@ -23,7 +23,6 @@ export default function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="/contact" element={<ContactPage />} />
-      </Routes>
       
     </div>
   );
