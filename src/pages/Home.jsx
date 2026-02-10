@@ -32,7 +32,7 @@ export default function Home() {
     {
       id: 2,
       title: "JEAN - STEPH TECH",
-      desc: "The company portfolio built in React will give you access to all our creations.\nIt is also available as open source where you could use it for your personal use.",
+      desc: "The company website built in React will give you access to all our creations.\nIt is also available as open source where you could use it for your personal use.",
       link: "https://lordobitotech.xyz",
       github: "https://github.com/Jean-sDev/JeanStephTech",
       tags: ["React", "Tailwind", "Vite"],
