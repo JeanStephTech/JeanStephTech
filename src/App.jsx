@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import teamMembers from "./pages/Team.jsx";
+import Team from "./pages/Team.jsx";
 
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
 import Terms from "./pages/legal/Terms";
@@ -22,7 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/team" element={<teamMembers />}>
+        <Route path="/team" element={<Team />}>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/legal" element={<Legal />} />
