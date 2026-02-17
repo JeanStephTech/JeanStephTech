@@ -8,11 +8,14 @@ const GitHubIcon = () => <svg viewBox="0 0 24 24" className="w-5 h-5 fill-curren
 
 const teamMembers = [
   {
-    name: "JEAN STEPH TECH",
+    name: "JEAN - STÉPHANE",
     role: "FOUNDER & CEO",
-    avatar: "https://i.pravatar.cc/150?u=jean",
-    description: "Expert en solutions digitales et visionnaire technique.",
-    links: { site: "https://lordobitotech.xyz", whatsapp: "#", youtube: "#", github: "#" }
+    avatar: "https://files.catbox.moe/j1vipa.jpg",
+    description: "Passionate about technological innovation and the development of digital ecosystems.",
+    site: "https://lordobitotech.xyz",
+    whatsapp: "https://whatsapp.com/channel/0029Vb65HSyHwXbEQbQjQV26",
+    youtube: "https://youtube.com/@JeanStephDev",
+    github: "https://github.com/Jean-sDev"
   },
   {
     name: "STYVEN - EMMANUEL",
