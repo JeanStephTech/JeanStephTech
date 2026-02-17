@@ -12,10 +12,10 @@ const teamMembers = [
     role: "FOUNDER & CEO",
     avatar: "https://files.catbox.moe/j1vipa.jpg",
     description: "Passionate about technological innovation and the development of digital ecosystems.",
-    site: "https://lordobitotech.xyz",
+   links:{ site: "https://lordobitotech.xyz",
     whatsapp: "https://whatsapp.com/channel/0029Vb65HSyHwXbEQbQjQV26",
     youtube: "https://youtube.com/@JeanStephDev",
-    github: "https://github.com/Jean-sDev"
+    github: "https://github.com/Jean-sDev"}
   },
   {
     name: "STYVEN - EMMANUEL",
