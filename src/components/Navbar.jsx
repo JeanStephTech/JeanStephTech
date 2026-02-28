@@ -46,20 +46,20 @@ export default function Navbar() {
         </Link>
 
         {/* Menu Desktop */}
-        <nav className="hidden md:flex gap-6 items-center">
-          {["/", "/blog"].map((path, idx) => (
-            <NavLink
-              key={idx}
-              to={path}
-              className={({ isActive }) =>
-                `hover:text-blue-500 transition ${
-                  isActive ? "text-blue-600 font-semibold" : "text-slate-700 dark:text-slate-200"
-                }`
-              }
-            >
-              {path === "/" ? "Home" : "Blog"}
-            </NavLink>
-          ))}
+        {["/", "/team", "/blog"].map((path, idx) => (
+  <NavLink
+    key={idx}
+    to={path}
+    className={({ isActive }) =>
+      `hover:text-blue-500 transition ${
+        isActive ? "text-blue-600 font-semibold" : "text-slate-700 dark:text-slate-200"
+      }`
+    }
+  >
+    {path === "/" ? "Home" : path.replace("/", "").charAt(0).toUpperCase() + path.slice(2)}
+  </NavLink>
+))}
+
           <a
             href="#projects"
             className="hover:text-blue-500 text-slate-700 dark:text-slate-200 transition"
