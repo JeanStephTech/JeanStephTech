@@ -110,6 +110,10 @@ export default function Navbar() {
           <a href="#projects" className="hover:text-blue-500 dark:text-slate-200" onClick={() => setOpen(false)}>
             Projects
           </a>
+          <Link to="/team" className="hover:text-blue-500 dark:text-slate-200" onClick={() => setOpen(false)}>
+           Team
+         </Link>
+
           <a
             href="/contact"
             className="px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition text-center"
