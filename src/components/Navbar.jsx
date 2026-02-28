@@ -3,38 +3,28 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
 
-  // Détecte le thème du système ou localStorage
+  // Détecte uniquement le thème du système ou localStorage au chargement
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.documentElement.classList.toggle("dark", storedTheme === "dark");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+      document.documentElement.classList.add("dark");
     } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(prefersDark ? "dark" : "light");
-      document.documentElement.classList.toggle("dark", prefersDark);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
-
-  // Change le thème
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-    localStorage.setItem("theme", newTheme);
-  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur border-b border-slate-200 dark:border-slate-700 transition-colors">
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        
         {/* Logo & Nom */}
         <Link to="/" className="flex items-center gap-3">
           <img
             src="https://files.catbox.moe/z76f8f.png"
             alt="JEAN - STEPH TECH"
-            onError={(e) => (e.target.style.display = "none")}
             className="w-10 h-10 rounded-full object-cover"
           />
           <div>
@@ -46,40 +36,37 @@ export default function Navbar() {
         </Link>
 
         {/* Menu Desktop */}
-        {["/", "/team", "/blog"].map((path, idx) => (
-  <NavLink
-    key={idx}
-    to={path}
-    className={({ isActive }) =>
-      `hover:text-blue-500 transition ${
-        isActive ? "text-blue-600 font-semibold" : "text-slate-700 dark:text-slate-200"
-      }`
-    }
-  >
-    {path === "/" ? "Home" : path.replace("/", "").charAt(0).toUpperCase() + path.slice(2)}
-  </NavLink>
-))}
-
-          <a
-            href="#projects"
-            className="hover:text-blue-500 text-slate-700 dark:text-slate-200 transition"
-          >
+        <nav className="hidden md:flex items-center gap-8">
+          {["/", "/team", "/blog"].map((path) => (
+            <NavLink
+              key={path}
+              to={path}
+              className={({ isActive }) =>
+                `hover:text-blue-500 transition ${
+                  isActive ? "text-blue-600 font-semibold" : "text-slate-700 dark:text-slate-200"
+                }`
+              }
+            >
+              {path === "/" ? "Home" : path.replace("/", "").charAt(0).toUpperCase() + path.slice(1)}
+            </NavLink>
+          ))}
+          
+          <a href="#projects" className="hover:text-blue-500 text-slate-700 dark:text-slate-200 transition">
             Projects
           </a>
-          <a
-            href="/contact"
+
+          <Link
+            to="/contact"
             className="px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition"
           >
             Contact me
-          </a>
-          {/* Toggle Theme */}
-          
+          </Link>
         </nav>
 
-        {/* Bouton Mobile */}
+        {/* Bouton Menu Mobile */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded hover:bg-blue-50 dark:hover:bg-slate-800 transition"
+          className="md:hidden p-2 rounded hover:bg-blue-50 dark:hover:bg-slate-800 transition text-slate-700 dark:text-slate-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,43 +74,34 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             strokeWidth={1.8}
             stroke="currentColor"
-            className="w-6 h-6 text-slate-700 dark:text-slate-200"
+            className="w-6 h-6"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <path strokeLinecap="round" strokeLinejoin="round" d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
           </svg>
         </button>
       </div>
 
-      {/* Menu Mobile Animé */}
+      {/* Menu Mobile */}
       <div
-        className={`md:hidden overflow-hidden transition-max-height duration-500 ease-in-out ${
-          open ? "max-h-96" : "max-h-0"
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 px-6 py-4 flex flex-col gap-3">
-          <Link to="/" className="hover:text-blue-500 dark:text-slate-200" onClick={() => setOpen(false)}>
-            Home
-          </Link>
-          <Link to="/blog" className="hover:text-blue-500 dark:text-slate-200" onClick={() => setOpen(false)}>
-            Blog
-          </Link>
-          <a href="#projects" className="hover:text-blue-500 dark:text-slate-200" onClick={() => setOpen(false)}>
-            Projects
-          </a>
-          <Link to="/team" className="hover:text-blue-500 dark:text-slate-200" onClick={() => setOpen(false)}>
-           Team
-         </Link>
-
-          <a
-            href="/contact"
-            className="px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition text-center"
+        <div className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 px-6 py-4 flex flex-col gap-4">
+          <Link to="/" onClick={() => setOpen(false)} className="text-slate-700 dark:text-slate-200 hover:text-blue-500">Home</Link>
+          <Link to="/team" onClick={() => setOpen(false)} className="text-slate-700 dark:text-slate-200 hover:text-blue-500">Team</Link>
+          <Link to="/blog" onClick={() => setOpen(false)} className="text-slate-700 dark:text-slate-200 hover:text-blue-500">Blog</Link>
+          <a href="#projects" onClick={() => setOpen(false)} className="text-slate-700 dark:text-slate-200 hover:text-blue-500">Projects</a>
+          
+          <Link
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className="px-4 py-2 bg-blue-600 text-white rounded-md font-medium text-center"
           >
             Contact me
-          </a>
-          {/* Toggle Theme Mobile */}
-         
+          </Link>
         </div>
       </div>
     </header>
   );
-      }
+}
